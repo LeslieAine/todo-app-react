@@ -43,9 +43,8 @@ const TodoItem = ({
           checked={itemProp.completed}
           onChange={() => handleChange(itemProp.id)}
         />
-        {user && (
         <button onClick={handleEditing}><AiFillEdit style={{ color: '#5e5e5e', fontSize: '16px' }} />
-        </button> )};
+        </button>
         <button onClick={() => delTodo(itemProp.id)}><FaTrash style={{ color: '#5e5e5e', fontSize: '16px' }} /></button>
         <span style={itemProp.completed ? completedStyle : null}>
           {itemProp.title}
