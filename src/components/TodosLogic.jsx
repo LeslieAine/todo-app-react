@@ -1,17 +1,19 @@
+/* eslint-disable no-param-reassign */
+
 import { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import InputTodo from './InputTodo';
 import TodosList from './TodosList';
 
 const TodosLogic = () => {
-  const [todos, setTodos] = useState(getInitialTodos());
-
   function getInitialTodos() {
     // getting stored items
     const temp = localStorage.getItem('todos');
     const savedTodos = JSON.parse(temp);
     return savedTodos || [];
   }
+
+  const [todos, setTodos] = useState(getInitialTodos());
 
   useEffect(() => {
     // storing todos items
@@ -61,7 +63,12 @@ const TodosLogic = () => {
   return (
     <div>
       <InputTodo addTodoItem={addTodoItem} />
-      <TodosList todosProps={todos} handleChange={handleChange} delTodo={delTodo} setUpdate={setUpdate} />
+      <TodosList
+        todosProps={todos}
+        handleChange={handleChange}
+        delTodo={delTodo}
+        setUpdate={setUpdate}
+      />
     </div>
 
   );

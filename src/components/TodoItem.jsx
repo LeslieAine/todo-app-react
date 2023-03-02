@@ -1,8 +1,10 @@
+/* eslint-disable react/button-has-type */
+/* eslint-disable jsx-a11y/control-has-associated-label */
+
 import { useState, useRef } from 'react';
 import { FaTrash } from 'react-icons/fa';
 import { AiFillEdit } from 'react-icons/ai';
 import styles from '../styles/TodoItem.module.css';
-import { useAuthContext } from '../context/AuthContext';
 
 const TodoItem = ({
   itemProp, handleChange, delTodo, setUpdate,
@@ -43,7 +45,8 @@ const TodoItem = ({
           checked={itemProp.completed}
           onChange={() => handleChange(itemProp.id)}
         />
-        <button onClick={handleEditing}><AiFillEdit style={{ color: '#5e5e5e', fontSize: '16px' }} />
+        <button onClick={handleEditing}>
+          <AiFillEdit style={{ color: '#5e5e5e', fontSize: '16px' }} />
         </button>
         <button onClick={() => delTodo(itemProp.id)}><FaTrash style={{ color: '#5e5e5e', fontSize: '16px' }} /></button>
         <span style={itemProp.completed ? completedStyle : null}>

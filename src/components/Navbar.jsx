@@ -1,3 +1,6 @@
+/* eslint-disable no-nested-ternary */
+/* eslint-disable react/button-has-type */
+
 import { NavLink, useNavigate } from 'react-router-dom';
 import React from 'react';
 import { useAuthContext } from '../context/AuthContext';
@@ -44,10 +47,10 @@ const Navbar = () => {
             </React.Fragment>
           ))}
           {!user && (
-                <li className="log-in">
-                    <span>Log in to edit to-dos</span>
-                </li>
-            )}
+          <li className="log-in">
+            <span>Log in to edit to-dos</span>
+          </li>
+          )}
         </ul>
 
       </nav>

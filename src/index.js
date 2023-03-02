@@ -30,6 +30,5 @@ root.render(
       <TodoApp />
     </BrowserRouter>
 
-  </React.StrictMode>
-)
-
+  </React.StrictMode>,
+);
